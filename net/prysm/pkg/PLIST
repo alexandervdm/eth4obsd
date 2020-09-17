@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v$
+@newgroup _prysm:861
+@newuser _prysm:861:861:daemon:prysm Account:${VARBASE}/prysm:/sbin/nologin
+@rcscript ${RCDIR}/prysm_beacon
+@rcscript ${RCDIR}/prysm_slasher
+@rcscript ${RCDIR}/prysm_validator
+@mode 750
+@owner _prysm
+@group _prysm
+@sample ${VARBASE}/prysm/
+@bin bin/beacon-chain
+@bin bin/slasher
+@bin bin/validator

@@ -1,0 +1,15 @@
+Lighthouse is an open-source Ethereum 2.0 maintained by Sigma Prime.
+It implements the Ethereum 2.0 specification as defined by the Ethereum
+Foundation Research team.
+
+Lighthouse is a cutting-edge distributed systems project implementing
+technologies at the forefront of blockchain research; including proof-of-stake
+consensus, parallel transaction execution and state separation (sharding).
+
+Lighthouse has no official affiliation with the Ethereum Foundation and will
+continue to follow its guidance as long it is remains in the best interest
+of the Ethereum protocol and community surrounding it.
+
+Lighthouse is implemented in Rust and will maintain a focus on security
+and efficiency.
+

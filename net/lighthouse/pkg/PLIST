@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v$
+@newgroup _lighthouse:862
+@newuser _lighthouse:862:862:daemon:lighthouse Account:${VARBASE}/lighthouse:/sbin/nologin
+@rcscript ${RCDIR}/lighthouse_beacon
+@rcscript ${RCDIR}/lighthouse_validator
+@mode 750
+@owner _lighthouse
+@group _lighthouse
+@sample ${VARBASE}/lighthouse/
+@bin bin/lighthouse
