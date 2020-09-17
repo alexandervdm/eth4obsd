@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2020/03/20 11:23:08 jsing Exp $
+# $OpenBSD: Makefile
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -10,10 +10,8 @@ PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
 
 CATEGORIES =		lang
-
 HOMEPAGE =		https://golang.org/
-
-MAINTAINER =		Joel Sing <jsing@openbsd.org>
+MAINTAINER =		Alexander van der Meij <openbsd-ports@vandermeij.tech>
 
 # software: BSD, documentation: CC-BY-3.0
 PERMIT_PACKAGE =	Yes
