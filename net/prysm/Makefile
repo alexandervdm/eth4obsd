@@ -32,7 +32,7 @@ COMPONENTS = beacon-chain slasher validator
 
 do-build:
 .for C in ${COMPONENTS}
-	cd ${WRKSRC}/${C} && ${MODGO_CMD} CGO_LDFLAGS=-L${PREFIX}/lib go build -o ${C} main.go
+	cd ${WRKSRC}/${C} && CGO_LDFLAGS=-L${PREFIX}/lib go build -o ${C} main.go
 .endfor
 
 do-install:
