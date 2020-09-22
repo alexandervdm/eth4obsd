@@ -2,7 +2,7 @@
 #
 # $OpenBSD$
 
-daemon="${TRUEPREFIX}/bin/slasher"
+daemon="${TRUEPREFIX}/bin/prysm_slasher"
 daemon_user="_prysm"
 daemon_flags=""
 

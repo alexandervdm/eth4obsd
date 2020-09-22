@@ -2,7 +2,7 @@
 #
 # $OpenBSD$
 
-daemon="${TRUEPREFIX}/bin/validator"
+daemon="${TRUEPREFIX}/bin/prysm_validator"
 daemon_user="_prysm"
 daemon_flags=""
 

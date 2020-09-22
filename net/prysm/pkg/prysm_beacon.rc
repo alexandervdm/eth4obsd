@@ -2,7 +2,7 @@
 #
 # $OpenBSD$
 
-daemon="${TRUEPREFIX}/bin/beacon-chain"
+daemon="${TRUEPREFIX}/bin/prysm_beacon"
 daemon_user="_prysm"
 daemon_flags=""
 
@@ -12,7 +12,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "${daemon} ${daemon_flags} 2>> ${VARBASE}/prysm/beacon-chain.log"
+	${rcexec} "${daemon} ${daemon_flags} 2>> ${VARBASE}/prysm/beacon.log"
 }
 
 rc_cmd $1
