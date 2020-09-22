@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: shared/bls/blst/signature.go
+--- shared/bls/blst/signature.go.orig
++++ shared/bls/blst/signature.go
+@@ -1,4 +1,4 @@
+-// +build linux,amd64 linux,arm64
++// +build linux,amd64 linux,arm64 openbsd,amd64
+ 
+ package blst
+ 

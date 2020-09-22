@@ -1,0 +1,11 @@
+$OpenBSD$
+
+Index: shared/bls/blst/public_key_test.go
+--- shared/bls/blst/public_key_test.go.orig
++++ shared/bls/blst/public_key_test.go
+@@ -1,4 +1,4 @@
+-// +build linux,amd64 linux,arm64
++// +build linux,amd64 linux,arm64 openbsd,amd64
+ 
+ package blst_test
+ 
