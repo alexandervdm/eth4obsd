@@ -8,6 +8,6 @@
 @owner _prysm
 @group _prysm
 @sample ${VARBASE}/prysm/
-@bin bin/beacon-chain
-@bin bin/slasher
-@bin bin/validator
+@bin bin/prysm_beacon
+@bin bin/prysm_slasher
+@bin bin/prysm_validator

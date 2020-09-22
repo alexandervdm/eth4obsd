@@ -28,16 +28,17 @@ BUILD_DEPENDS =    lang/go14 \
 #MODULES =	    lang/go
 #MODGO_TYPE =	    bin
 
-COMPONENTS = beacon-chain slasher validator
-
 do-build:
-.for C in ${COMPONENTS}
-	cd ${WRKSRC}/${C} && CGO_LDFLAGS=-L${PREFIX}/lib go build -o ${C} main.go
-.endfor
+	cd ${WRKSRC}/beacon-chain && \
+		CGO_LDFLAGS=-L${PREFIX}/lib go build -o prysm_beacon main.go && \
+	cd ${WRKSRC}/slasher && \
+		CGO_LDFLAGS=-L${PREFIX}/lib go build -o prysm_slasher main.go && \
+	cd ${WRKSRC}/validator && \
+		CGO_LDFLAGS=-L${PREFIX}/lib go build -o prysm_validator main.go
 
 do-install:
-.for C in ${COMPONENTS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${C}/${C} ${PREFIX}/bin/
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/beacon-chain/prysm_beacon ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/slasher/prysm_slasher ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/validator/prysm_validator ${PREFIX}/bin/
 
 .include <bsd.port.mk>
