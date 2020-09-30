@@ -7,8 +7,8 @@ This repo contains Ethereum related ports for OpenBSD. It currently targets x86_
 | Client | Version | Status |
 | :---         |     :---      |          ---: |
 | Geth    | 0.9.21            | ALL OK    |
-| Prysm   | 1.0.0-alpha26     | WORKING WITH PATCHES    |
-| Lighthouse    | 0.2.9       | WORKING WITH PATCHES    |
+| Prysm   | 1.0.0-alpha27     | WORKING WITH PATCHES    |
+| Lighthouse    | 0.2.13       | WORKING WITH PATCHES    |
 | Nimbus        | N/A         | TBD |
 | Teku          | N/A         | N/A    |
 
