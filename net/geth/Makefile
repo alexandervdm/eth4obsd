@@ -3,7 +3,7 @@
 # NOTE: based on port by Fabian Raetz at github.com/jasperla/openbsd-wip
 
 COMMENT =	    go implementation of the ethereum protocol
-VERSION =	    1.9.21
+VERSION =	    1.9.23
 PKGNAME =	    geth-$(VERSION)
 #REVISION =	    0
 
