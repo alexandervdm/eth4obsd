@@ -1826,9 +1826,6 @@ go/src/cmd/doc/doc_test.go
 go/src/cmd/doc/main.go
 go/src/cmd/doc/pkg.go
 go/src/cmd/doc/testdata/
-go/src/cmd/doc/testdata/merge/
-go/src/cmd/doc/testdata/merge/aa.go
-go/src/cmd/doc/testdata/merge/bb.go
 go/src/cmd/doc/testdata/nested/
 go/src/cmd/doc/testdata/nested/empty/
 go/src/cmd/doc/testdata/nested/empty/empty.go
@@ -2296,7 +2293,6 @@ go/src/cmd/go/testdata/script/README
 go/src/cmd/go/testdata/script/bug.txt
 go/src/cmd/go/testdata/script/build_GOTMPDIR.txt
 go/src/cmd/go/testdata/script/build_acl_windows.txt
-go/src/cmd/go/testdata/script/build_cache_arch_mode.txt
 go/src/cmd/go/testdata/script/build_cache_compile.txt
 go/src/cmd/go/testdata/script/build_cache_gomips.txt
 go/src/cmd/go/testdata/script/build_cache_link.txt
@@ -2559,16 +2555,9 @@ go/src/cmd/go/testdata/script/std_vendor.txt
 go/src/cmd/go/testdata/script/sum_readonly.txt
 go/src/cmd/go/testdata/script/test_bad_example.txt
 go/src/cmd/go/testdata/script/test_badtest.txt
-go/src/cmd/go/testdata/script/test_benchmark_chatty_fail.txt
-go/src/cmd/go/testdata/script/test_benchmark_chatty_success.txt
 go/src/cmd/go/testdata/script/test_benchmark_fatal.txt
 go/src/cmd/go/testdata/script/test_benchmark_labels.txt
 go/src/cmd/go/testdata/script/test_cache_inputs.txt
-go/src/cmd/go/testdata/script/test_chatty_fail.txt
-go/src/cmd/go/testdata/script/test_chatty_parallel_fail.txt
-go/src/cmd/go/testdata/script/test_chatty_parallel_success.txt
-go/src/cmd/go/testdata/script/test_chatty_parallel_success_sleepy.txt
-go/src/cmd/go/testdata/script/test_chatty_success.txt
 go/src/cmd/go/testdata/script/test_compile_binary.txt
 go/src/cmd/go/testdata/script/test_compile_tempfile.txt
 go/src/cmd/go/testdata/script/test_flag.txt
@@ -9729,10 +9718,7 @@ go/test/fixedbugs/issue36723.go
 go/test/fixedbugs/issue3705.go
 go/test/fixedbugs/issue37716.go
 go/test/fixedbugs/issue3783.go
-go/test/fixedbugs/issue38117.go
 go/test/fixedbugs/issue3925.go
-go/test/fixedbugs/issue39459.go
-go/test/fixedbugs/issue39541.go
 go/test/fixedbugs/issue4066.go
 go/test/fixedbugs/issue4085a.go
 go/test/fixedbugs/issue4085b.go
