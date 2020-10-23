@@ -1,0 +1,14 @@
+$OpenBSD$
+
+Index: validator_client/slashing_protection/Makefile
+--- validator_client/slashing_protection/Makefile.orig
++++ validator_client/slashing_protection/Makefile
+@@ -7,7 +7,7 @@ ARCHIVE_URL := https://github.com/eth2-clients/slashin
+ $(OUTPUT_DIR): $(TARBALL)
+ 	rm -rf $@
+ 	mkdir $@
+-	tar --strip-components=1 -xzf $^ -C $@
++	gtar --strip-components=1 -xzf $^ -C $@
+ 
+ $(TARBALL):
+ 	wget $(ARCHIVE_URL) -O $@

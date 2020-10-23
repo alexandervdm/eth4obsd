@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile
 
 COMMENT =	    Ethereum 2.0 Rust based client maintained by Sigma Prime.
-VERSION =	    0.2.13
+VERSION =	    0.3.0
 #REVISION =	    0
 
 GH_ACCOUNT =	    sigp
@@ -20,7 +20,8 @@ USE_GMAKE =	    Yes
 
 BUILD_DEPENDS =    lang/rust \
 		    devel/cmake \
-		    devel/protobuf-c
+		    devel/protobuf-c \
+		    archivers/gtar
 
 CONFIGURE_ENV =    CARGO_HOME=${WRKBUILD}/cargo-home
 
