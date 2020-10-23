@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile
 
 COMMENT =	    Go implementation of the Ethereum 2.0 blockchain
-VERSION =	    1.0.0-alpha.27
+VERSION =	    1.0.0-alpha.29
 PKGNAME =	    prysm-$(VERSION:S/-/./)
 #REVISION =	    0
 
