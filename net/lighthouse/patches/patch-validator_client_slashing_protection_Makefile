@@ -11,4 +11,4 @@ Index: validator_client/slashing_protection/Makefile
 +	gtar --strip-components=1 -xzf $^ -C $@
  
  $(TARBALL):
- 	wget $(ARCHIVE_URL) -O $@
+ 	curl -L -o $@ $(ARCHIVE_URL)
