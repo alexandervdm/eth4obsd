@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile
 
 COMMENT =	    Ethereum 2.0 Rust based client maintained by Sigma Prime.
-VERSION =	    0.3.1
+VERSION =	    0.3.3
 #REVISION =	    0
 
 GH_ACCOUNT =	    sigp
