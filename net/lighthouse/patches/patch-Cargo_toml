@@ -3,10 +3,9 @@ $OpenBSD$
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -81,3 +81,6 @@ eth2_ssz = { path = "consensus/ssz" }
+@@ -86,3 +86,5 @@ eth2_ssz = { path = "consensus/ssz" }
  eth2_ssz_derive = { path = "consensus/ssz_derive" }
  eth2_ssz_types = { path = "consensus/ssz_types" }
  eth2_hashing = { path = "crypto/eth2_hashing" }
 +
 +openssl-sys = { git = "https://github.com/alexandervdm/rust-openssl" }
-+tokio-uds = { git = "https://github.com/alexandervdm/tokio-uds", branch = "017-for-openbsd" }

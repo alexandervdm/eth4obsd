@@ -8,7 +8,7 @@ Index: validator_client/slashing_protection/Makefile
  	rm -rf $@
  	mkdir $@
 -	tar --strip-components=1 -xzf $^ -C $@
-+	gtar --strip-components=1 -xzf $^ -C $@
++	gtar --strip-components=1 -xzf ${TARBALL} -C $@
  
  $(TARBALL):
  	curl -L -o $@ $(ARCHIVE_URL)

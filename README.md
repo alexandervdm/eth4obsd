@@ -8,7 +8,7 @@ This repo contains Ethereum related ports for OpenBSD. It currently targets x86_
 | :---         |     :---      |          ---: |
 | Geth    | 0.9.23            | ALL OK    |
 | Prysm   | 1.0.0-alpha29     | WORKING WITH PATCHES    |
-| Lighthouse    | 0.3.3       | WORKING WITH PATCHES    |
+| Lighthouse    | 0.3.4       | WORKING WITH PATCHES    |
 | Nimbus        | N/A         | TBD |
 | Teku          | N/A         | N/A    |
 
@@ -57,11 +57,10 @@ Here follows an overview of the patching that were necessary to make the package
 - A set of patches was added to the Prysm build contraints for the new blst dependency.
 
 #### [Sigp/Lighthouse](https://github.com/sigp/lighthouse)
-- Dependency openssl-sys-0.5.8 was forked to include a [patch](https://github.com/alexandervdm/rust-openssl) that adds support for LibreSSL 3.2.1
-- Dependency tokio-uds-0.1.7 was forked to include a cherry-picked [patch](https://github.com/alexandervdm/tokio-uds/commits/017-for-openbsd) that adds OpenBSD support
-- Build flag OPENSSL_NO_VENDOR was added to make use of the system's libressl
+- Dependency openssl-sys-0.5.8 was forked to include a [patch](https://github.com/alexandervdm/rust-openssl) to support LibreSSL 3.2.2
+- Build flag OPENSSL_NO_VENDOR was added to make use of the system libressl
 - RUSTFLAGS="-C default_linker_libraries" was added to prevent fatal linkage issues when compiling the lighthouse binary
-- A patch was added to rename a call to GNU 'tar' to 'gtar'
+- The slashing protection Makefile was patched to rename the GNU/tar calls to gtar
 
 ## Troubleshooting
 
