@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile
 
 COMMENT =	    Go implementation of the Ethereum 2.0 blockchain
-VERSION =	    1.0.0-alpha.29
+VERSION =	    1.0.0-beta.2
 PKGNAME =	    prysm-$(VERSION:S/-/./)
 #REVISION =	    0
 
@@ -28,13 +28,16 @@ BUILD_DEPENDS =    lang/go14 \
 #MODULES =	    lang/go
 #MODGO_TYPE =	    bin
 
+PRYSM_CGO=CGO_LDFLAGS=-L${PREFIX}/lib CGO_CFLAGS="-D__BLST_PORTABLE__"
+PRYSM_TAGS=blst_enabled
+
 do-build:
 	cd ${WRKSRC}/beacon-chain && \
-		CGO_LDFLAGS=-L${PREFIX}/lib go build -o prysm_beacon main.go && \
+		${PRYSM_CGO} go build -tags ${PRYSM_TAGS} -o prysm_beacon main.go && \
 	cd ${WRKSRC}/slasher && \
-		CGO_LDFLAGS=-L${PREFIX}/lib go build -o prysm_slasher main.go && \
+		${PRYSM_CGO} go build -tags ${PRYSM_TAGS} -o prysm_slasher main.go && \
 	cd ${WRKSRC}/validator && \
-		CGO_LDFLAGS=-L${PREFIX}/lib go build -o prysm_validator main.go
+		${PRYSM_CGO} go build -tags ${PRYSM_TAGS} -o prysm_validator main.go
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beacon-chain/prysm_beacon ${PREFIX}/bin/
