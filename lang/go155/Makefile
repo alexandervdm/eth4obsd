@@ -1,17 +1,22 @@
-# $OpenBSD: Makefile
+# $OpenBSD: Makefile,v 1.90 2020/09/27 16:48:56 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
+BIN_BOOTSTRAP_GOARCHS =	arm arm64
+BIN_BOOTSTRAP_VERSION = 1.13.9
+
 COMMENT =		Go programming language
 
-VERSION =		1.14.2
+VERSION =		1.15.5
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
 
 CATEGORIES =		lang
+
 HOMEPAGE =		https://golang.org/
-MAINTAINER =		Alexander van der Meij <openbsd-ports@vandermeij.tech>
+
+MAINTAINER =		Joel Sing <jsing@openbsd.org>
 
 # software: BSD, documentation: CC-BY-3.0
 PERMIT_PACKAGE =	Yes
@@ -42,6 +47,10 @@ GOROOT_BOOTSTRAP =
 # sync with go.port.mk
 .if ${MACHINE_ARCH} == "amd64"
 GOARCH =		amd64
+.elif ${MACHINE_ARCH} == "arm"
+GOARCH =		arm
+.elif ${MACHINE_ARCH} == "aarch64"
+GOARCH =		arm64
 .elif ${MACHINE_ARCH} == "i386"
 GOARCH =		386
 .endif
