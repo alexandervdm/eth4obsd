@@ -6,8 +6,8 @@ This repo contains Ethereum related ports for OpenBSD. It currently targets x86_
 
 | Client | Version | Status |
 | :---         |     :---      |          ---: |
-| Geth    | 0.9.23            | ALL OK    |
-| Prysm   | 1.0.0-alpha29     | WORKING WITH PATCHES    |
+| Geth    | 0.9.24            | ALL OK    |
+| Prysm   | 1.0.0-beta.2      | WORKING WITH PATCHES    |
 | Lighthouse    | 0.3.4       | WORKING WITH PATCHES    |
 | Nimbus        | N/A         | TBD |
 | Teku          | N/A         | N/A    |
@@ -52,7 +52,7 @@ Here follows an overview of the patching that were necessary to make the package
 
 #### [Prysmaticlabs/Prysm](https://github.com/prysmaticlabs/prysm)
 - Prysm uses Google's Bazel as a build tool. Bazel has an available OpenBSD [port](https://marc.info/?l=openbsd-ports&m=159163098121456&w=2), but while building prysm it tries to pull in components without OpenBSD support such as the llvm toolchain. At this time this prysm port avoids bazel in favour of 'go build'.
-- Prysm is built using a custom go-1.14 port to match the Bazel build environment. Also binaries built using the system go-1.15 seem to have peering issues. Need to investigate further.
+- Prysm is built using a custom go-1.15.5 port to include recent go CVE fixes and match the Bazel build environment.
 - Prysm depends on [herumi/bls](https://github.com/herumi/bls). Supported platforms pull in a pre-compiled static version of the library from [herumi/bls-eth-go-binary](https://github.com/herumi/bls-eth-go-binary) but OpenBSD is not one of them and I prefer compiling it myself anyway so a somewhat hacky port is provided under security/bls-eth-go.
 - A set of patches was added to the Prysm build contraints for the new blst dependency.
 
