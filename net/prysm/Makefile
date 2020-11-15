@@ -18,7 +18,7 @@ PERMIT_PACKAGE =   Yes
 
 SUBST_VARS =	    VARBASE
 
-BUILD_DEPENDS =    lang/go14 \
+BUILD_DEPENDS =    lang/go155 \
 		    security/bls-eth-go
 
 # NOTE: have to use non-system lang/go for now so will
