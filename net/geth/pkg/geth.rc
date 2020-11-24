@@ -4,7 +4,7 @@
 
 daemon="${TRUEPREFIX}/bin/geth"
 daemon_user="_geth"
-daemon_flags=""
+daemon_flags="--config /etc/geth.conf"
 
 . /etc/rc.d/rc.subr
 

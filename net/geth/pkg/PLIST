@@ -13,3 +13,6 @@
 @group
 @bin bin/geth
 @comment share/doc/pkg-readmes/${PKGSTEM}
+share/geth/
+share/geth/geth.conf
+@sample ${SYSCONFDIR}/geth.conf
