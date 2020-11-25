@@ -1,6 +1,5 @@
 
-This repo contains Ethereum related ports for OpenBSD. It currently targets x86_64 only for OpenBSD 6.8-beta which should be released at some point in Q3 2020. Most packages available here require obsd-specific patching at this time which is further detailed below.
-
+This repo contains Ethereum related ports for OpenBSD. It currently targets x86_64 only for OpenBSD 6.8 which was released on Oct 18, 2020. Most packages available here require obsd-specific patching at this time which is further detailed below.
 
 ## Content
 
@@ -8,7 +7,7 @@ This repo contains Ethereum related ports for OpenBSD. It currently targets x86_
 | :---         |     :---      |          ---: |
 | Geth    | 0.9.24            | ALL OK    |
 | Prysm   | 1.0.0-beta.2      | WORKING WITH PATCHES    |
-| Lighthouse    | 0.3.4       | WORKING WITH PATCHES    |
+| Lighthouse    | 0.3.5       | WORKING WITH PATCHES    |
 | Nimbus        | N/A         | TBD |
 | Teku          | N/A         | N/A    |
 
@@ -64,7 +63,7 @@ Here follows an overview of the patching that were necessary to make the package
 
 ## Troubleshooting
 
-If you are running into build failures, please ensure that the limits defined in /etc/login.conf for your user are adequate. Rust compiling in particular tends to require a lot of memory and will crash and burn if haven't adjusted the default limits.
+If you are running into build failures, please ensure that the limits defined in /etc/login.conf for your user are adequate. Rust compiling in particular tends to require a lot of memory and will crash and burn if the default limits weren't adjusted.
 
 ## Disclaimer:
 
