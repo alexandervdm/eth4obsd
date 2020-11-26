@@ -1,9 +1,8 @@
 Ethereum is a decentralized platform that runs smart contracts, applications
 that run exactly as programmed without possibility of downtime, censorship,
-fraud or third party interference. The go-ethereum project comes with:
+fraud or third party interference.
 
-geth:
-   main Ethereum CLI client. It is the entry point into the Ethereum network
-   (main-, test- or private net), capable of running as a full node (default),
-   archive node (retaining all historical state) or a light node (retrieving
-   data live)
+This package contains the geth client, one of the original implementations
+of the Ethereum protocol. It is the entry point into the Ethereum network,
+capable of running as a full node (default), archive node (retaining all
+historical state) or a light node (retrieving data live).

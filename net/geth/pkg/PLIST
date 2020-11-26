@@ -12,6 +12,7 @@
 @owner
 @group
 @bin bin/geth
+share/doc/pkg-readmes/${PKGSTEM}
 @comment share/doc/pkg-readmes/${PKGSTEM}
 share/geth/
 share/geth/geth.conf

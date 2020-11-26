@@ -1,0 +1,35 @@
+----------------------------------------------------------------------------
+Running Geth on OpenBSD
+----------------------------------------------------------------------------
+
+By default, the _geth user and its processes run in the login(1) class
+of "daemon". The standard limits defined in login.conf(5) for this class
+are insufficient to run geth. Instead you should define a new login
+class for geth to allow appropriate resources.
+
+For example, add this to your login.conf(5) file:
+
+	geth:\
+		:openfiles-max=131072:\
+		:openfiles-cur=65536:\
+		:tc=daemon:
+
+And change the login class for the _geth user as follows:
+
+	usermod -L geth _geth
+	
+You will also want to raise the global limit for the maximum number 
+of open files in the system through the sysctl(2) value:
+
+	sysctl kern.maxfiles=262144
+
+----------------------------------------------------------------------------
+Starting Geth on OpenBSD
+----------------------------------------------------------------------------
+
+The daemon can be enabled/started using regular rcctl(8) commands.
+
+Note that while the configuration file that was installed at /etc/geth.conf
+contains a functional/complete set of options to connect to the mainnet,
+not all options are currently allowed to be configured in this way.
+
