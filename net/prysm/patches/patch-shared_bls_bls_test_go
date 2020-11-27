@@ -1,0 +1,51 @@
+$OpenBSD$
+
+Index: shared/bls/bls_test.go
+--- shared/bls/bls_test.go.orig
++++ shared/bls/bls_test.go
+@@ -10,15 +10,7 @@ import (
+ 
+ func TestDisallowZeroSecretKeys(t *testing.T) {
+ 	flags := &featureconfig.Flags{}
+-	t.Run("herumi", func(t *testing.T) {
+-		flags := &featureconfig.Flags{}
+-		reset := featureconfig.InitWithReset(flags)
+-		defer reset()
+ 
+-		_, err := SecretKeyFromBytes(common.ZeroSecretKey[:])
+-		require.Equal(t, common.ErrZeroKey, err)
+-	})
+-
+ 	t.Run("blst", func(t *testing.T) {
+ 		flags.EnableBlst = true
+ 		reset := featureconfig.InitWithReset(flags)
+@@ -32,14 +24,6 @@ func TestDisallowZeroSecretKeys(t *testing.T) {
+ func TestDisallowZeroPublicKeys(t *testing.T) {
+ 	flags := &featureconfig.Flags{}
+ 
+-	t.Run("herumi", func(t *testing.T) {
+-		reset := featureconfig.InitWithReset(flags)
+-		defer reset()
+-
+-		_, err := PublicKeyFromBytes(common.InfinitePublicKey[:])
+-		require.Equal(t, common.ErrInfinitePubKey, err)
+-	})
+-
+ 	t.Run("blst", func(t *testing.T) {
+ 		flags.EnableBlst = true
+ 		reset := featureconfig.InitWithReset(flags)
+@@ -52,14 +36,6 @@ func TestDisallowZeroPublicKeys(t *testing.T) {
+ 
+ func TestDisallowZeroPublicKeys_AggregatePubkeys(t *testing.T) {
+ 	flags := &featureconfig.Flags{}
+-
+-	t.Run("herumi", func(t *testing.T) {
+-		reset := featureconfig.InitWithReset(flags)
+-		defer reset()
+-
+-		_, err := AggregatePublicKeys([][]byte{common.InfinitePublicKey[:], common.InfinitePublicKey[:]})
+-		require.Equal(t, common.ErrInfinitePubKey, err)
+-	})
+ 
+ 	t.Run("blst", func(t *testing.T) {
+ 		flags.EnableBlst = true

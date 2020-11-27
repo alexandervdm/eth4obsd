@@ -1,33 +1,36 @@
 
-This repo contains Ethereum related ports for OpenBSD. It currently targets x86_64 only for OpenBSD 6.8 which was released on Oct 18, 2020. Most packages available here require obsd-specific patching at this time which is further detailed below.
+This repository contains Ethereum related ports for OpenBSD. It currently only targets x86_64 architecture for OpenBSD 6.8 which was released on Oct 18, 2020. Most packages available here require obsd-specific patching at this time which is further detailed below.
+
+All processes for a given client run under the same user account and as such it is assumed other methods of isolating the validator have been implemented.
+It is recommended to follow the instructions in the provided README documents.
 
 ## Content
 
 | Client | Version | Status |
 | :---         |     :---      |          ---: |
 | Geth    | 0.9.24            | ALL OK    |
-| Prysm   | 1.0.0-beta.2      | WORKING WITH PATCHES    |
-| Lighthouse    | 0.3.5       | WORKING WITH PATCHES    |
+| Prysm   | 1.0.0      | WORKING WITH PATCHES    |
+| Lighthouse    | 1.0.0       | WORKING WITH PATCHES    |
 | Nimbus        | N/A         | TBD |
 | Teku          | N/A         | N/A    |
 
 ## How to use
 
-Configure the ports tree for -current using the steps below or this [guide](https://www.openbsd.org/faq/ports/ports.html):
+Configure the ports tree for 6.8-stable using the steps below or this [guide](https://www.openbsd.org/faq/ports/ports.html):
 ```
 cd /usr
-cvs -qd anoncvs@anoncvs.eu.openbsd.org:/cvs checkout -P ports
+cvs -qd anoncvs@anoncvs.eu.openbsd.org:/cvs checkout -rOPENBSD_6_8 -P ports
 ```
 
 Configure this repository
 ```
 cd /usr/ports
-git clone https://github.com/alexandervdm/eth4obsd.git
+git clone https://github.com/alexandervdm/ethereum-openbsd.git
 ```
 
 Modify the PORTSDIR_PATH in your /etc/mk.conf to include this repo, i.e:
 ```
-PORTSDIR_PATH=${PORTSDIR}:${PORTSDIR}/eth4obsd
+PORTSDIR_PATH=${PORTSDIR}:${PORTSDIR}/ethereum-openbsd
 ```
 
 Before building, add the appropriate (daemon) users to your ports user list:
@@ -41,7 +44,7 @@ EOF
 
 Finally we can build our ports, for example geth:
 ```
-cd /usr/ports/eth4obsd/net/geth
+cd /usr/ports/ethereum-openbsd/net/geth
 make && make install
 ```
 
@@ -50,7 +53,7 @@ make && make install
 Here follows an overview of the patching that were necessary to make the packages work on OpenBSD. I aim to make this list as small & boring as possible and welcome assistance towards this goal.
 
 #### [Prysmaticlabs/Prysm](https://github.com/prysmaticlabs/prysm)
-- Prysm uses Google's Bazel as a build tool. Bazel has an available OpenBSD [port](https://marc.info/?l=openbsd-ports&m=159163098121456&w=2), but while building prysm it tries to pull in components without OpenBSD support such as the llvm toolchain. At this time this prysm port avoids bazel in favour of 'go build'.
+- Prysm uses Google's Bazel as a build tool. Bazel has an available OpenBSD [port](https://marc.info/?l=openbsd-ports&m=159163098121456&w=2), but while building prysm it tries to pull in components without OpenBSD support such as the llvm toolchain. At this time this prysm port avoids bazel all-together in favour of 'go build'.
 - Prysm is built using a custom go-1.15.5 port to include recent go CVE fixes and match the Bazel build environment.
 - Prysm depends on [herumi/bls](https://github.com/herumi/bls). Supported platforms pull in a pre-compiled static version of the library from [herumi/bls-eth-go-binary](https://github.com/herumi/bls-eth-go-binary) but OpenBSD is not one of them and I prefer compiling it myself anyway so a somewhat hacky port is provided under security/bls-eth-go.
 - A set of patches was added to the Prysm build contraints for the new blst dependency.
