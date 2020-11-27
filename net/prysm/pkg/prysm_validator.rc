@@ -4,7 +4,7 @@
 
 daemon="${TRUEPREFIX}/bin/prysm_validator"
 daemon_user="_prysm"
-daemon_flags=""
+daemon_flags="--config-file ${VARBASE}/prysm/config/validator.yaml"
 
 . /etc/rc.d/rc.subr
 

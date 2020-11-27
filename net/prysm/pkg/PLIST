@@ -4,10 +4,19 @@
 @rcscript ${RCDIR}/prysm_beacon
 @rcscript ${RCDIR}/prysm_slasher
 @rcscript ${RCDIR}/prysm_validator
-@mode 750
+@mode 700
 @owner _prysm
 @group _prysm
 @sample ${VARBASE}/prysm/
+@sample ${VARBASE}/prysm/config/
+@sample ${VARBASE}/prysm/data/
 @bin bin/prysm_beacon
 @bin bin/prysm_slasher
 @bin bin/prysm_validator
+@mode
+@owner
+@group
+share/examples/prysm/
+share/examples/prysm/beacon.yaml
+share/examples/prysm/slasher.yaml
+share/examples/prysm/validator.yaml

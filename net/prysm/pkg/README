@@ -1,0 +1,11 @@
+----------------------------------------------------------------------------
+Running Prysm on OpenBSD
+----------------------------------------------------------------------------
+
+Minimal example configuration files can be found in
+
+	/usr/local/share/examples/prysm
+
+Copy these yaml files to your /var/prysm/config directory before starting
+the daemon. For a full list of available options, run the prysm_* bins
+with the --help flag.

@@ -1,0 +1,8 @@
+accept-terms-of-use: true
+http-web3provider: http://localhost:8545
+p2p-udp-port: 12000
+p2p-tcp-port: 13000
+datadir: /var/prysm/data
+rpc-host: 127.0.0.1
+pyrmont: false
+mainnet: true

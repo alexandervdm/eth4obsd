@@ -4,7 +4,7 @@
 
 daemon="${TRUEPREFIX}/bin/prysm_slasher"
 daemon_user="_prysm"
-daemon_flags=""
+daemon_flags="--config-file ${VARBASE}/prysm/config/slasher.yaml"
 
 . /etc/rc.d/rc.subr
 

@@ -1,2 +1,8 @@
+Prysm is a Go implementation of Ethereum Serenity protocol as detailed by its
+official specification. It contains a full beacon node implementation as well
+as a validator client for participating in blockchain consensus.
 
-TBD
+Prysm utilizes the best-in-class tools for production servers and
+interprocess communication, using Google's gRPC library, BoltDB as an
+optimized, persistent, key-value store, and libp2p by Protocol Labs
+for all peer-to-peer networking.
