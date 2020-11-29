@@ -5,7 +5,7 @@
 COMMENT =	    go implementation of the ethereum protocol
 VERSION =	    1.9.24
 PKGNAME =	    geth-$(VERSION)
-#REVISION =	    0
+REVISION =	    1
 
 GH_ACCOUNT =	    ethereum
 GH_PROJECT =	    go-ethereum

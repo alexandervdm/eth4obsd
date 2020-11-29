@@ -2,9 +2,9 @@
 #
 # $OpenBSD$
 
-daemon="${TRUEPREFIX}/bin/geth"
+daemon="${TRUEPREFIX}/bin/geth --config /etc/geth.conf"
 daemon_user="_geth"
-daemon_flags="--config /etc/geth.conf"
+daemon_flags=""
 
 . /etc/rc.d/rc.subr
 
