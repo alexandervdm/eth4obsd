@@ -2,9 +2,9 @@
 #
 # $OpenBSD$
 
-daemon="${TRUEPREFIX}/bin/prysm_slasher"
+daemon="${TRUEPREFIX}/bin/prysm_slasher --config-file ${VARBASE}/prysm/config/slasher.yaml"
 daemon_user="_prysm"
-daemon_flags="--config-file ${VARBASE}/prysm/config/slasher.yaml"
+daemon_flags=""
 
 . /etc/rc.d/rc.subr
 

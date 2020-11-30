@@ -2,9 +2,9 @@
 #
 # $OpenBSD$
 
-daemon="${TRUEPREFIX}/bin/prysm_validator"
+daemon="${TRUEPREFIX}/bin/prysm_validator --config-file ${VARBASE}/prysm/config/validator.yaml"
 daemon_user="_prysm"
-daemon_flags="--config-file ${VARBASE}/prysm/config/validator.yaml"
+daemon_flags=""
 
 . /etc/rc.d/rc.subr
 

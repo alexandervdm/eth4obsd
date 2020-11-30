@@ -2,9 +2,9 @@
 #
 # $OpenBSD$
 
-daemon="${TRUEPREFIX}/bin/prysm_beacon"
+daemon="${TRUEPREFIX}/bin/prysm_beacon --config-file ${VARBASE}/prysm/config/beacon.yaml"
 daemon_user="_prysm"
-daemon_flags="--config-file ${VARBASE}/prysm/config/beacon.yaml"
+daemon_flags=""
 
 . /etc/rc.d/rc.subr
 
