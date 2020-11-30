@@ -1,0 +1,14 @@
+$OpenBSD: patch-library_std_src_sys_unix_stack_overflow_rs,v 1.1 2020/11/05 09:21:34 semarie Exp $
+Use MAP_STACK for stack allocation.
+Index: library/std/src/sys/unix/stack_overflow.rs
+--- library/std/src/sys/unix/stack_overflow.rs.orig
++++ library/std/src/sys/unix/stack_overflow.rs
+@@ -144,7 +144,7 @@ mod imp {
+             ptr::null_mut(),
+             SIGSTKSZ + page_size(),
+             PROT_READ | PROT_WRITE,
+-            MAP_PRIVATE | MAP_ANON,
++            MAP_PRIVATE | MAP_ANON | libc::MAP_STACK,
+             -1,
+             0,
+         );

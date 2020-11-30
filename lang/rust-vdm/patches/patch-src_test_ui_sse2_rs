@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_test_ui_sse2_rs,v 1.1 2019/09/29 08:23:17 semarie Exp $
+Disable SSE2 tests for i386.
+Index: src/test/ui/sse2.rs
+--- src/test/ui/sse2.rs.orig
++++ src/test/ui/sse2.rs
+@@ -10,7 +10,7 @@ fn main() {
+     match env::var("TARGET") {
+         Ok(s) => {
+             // Skip this tests on i586-unknown-linux-gnu where sse2 is disabled
+-            if s.contains("i586") {
++            if s.contains("i586") || s.contains("i686-unknown-openbsd") {
+                 return
+             }
+         }

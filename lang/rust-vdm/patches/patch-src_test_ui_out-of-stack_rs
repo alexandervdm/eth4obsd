@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_test_ui_out-of-stack_rs,v 1.2 2020/11/05 09:21:34 semarie Exp $
+
+Index: src/test/ui/out-of-stack.rs
+--- src/test/ui/out-of-stack.rs.orig
++++ src/test/ui/out-of-stack.rs
+@@ -6,6 +6,7 @@
+ // ignore-cloudabi no processes
+ // ignore-emscripten no processes
+ // ignore-sgx no processes
++// ignore-openbsd
+ 
+ #![feature(llvm_asm)]
+ #![feature(rustc_private)]
