@@ -1,5 +1,4 @@
 # $OpenBSD: Makefile
-
 # NOTE: based on port by Fabian Raetz at github.com/jasperla/openbsd-wip
 
 COMMENT =	    go implementation of the ethereum protocol
@@ -22,14 +21,7 @@ PERMIT_PACKAGE =    Yes
 
 SUBST_VARS =	    VARBASE
 
-BUILD_DEPENDS =     lang/go155
-
-# NOTE: have to use non-system lang/go for now so will
-# have to look into all this fancy stuff later
-#MAKE_ENV +=	    CGO_CFLAGS=-I${PREFIX}/include \
-#		    CGO_LDFLAGS=-L${PREFIX}/lib
-#MODULES =	    lang/go
-#MODGO_TYPE =	    bin
+BUILD_DEPENDS =     lang/go-vdm
 
 # NOTE: additional go-ethereum tools are excluded for now
 

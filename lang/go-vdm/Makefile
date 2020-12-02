@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.90 2020/09/27 16:48:56 jsing Exp $
+# $OpenBSD: Makefile
+# forked from openbsd-ports v 1.90 2020/09/27 16:48:56 jsing Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -9,14 +10,14 @@ COMMENT =		Go programming language
 
 VERSION =		1.15.5
 DISTNAME =		go${VERSION}.src
-PKGNAME =		go-${VERSION}
-PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
+PKGNAME =		go-vdm-${VERSION}
+PKGSPEC =		${FULLPKGNAME:S/go-vdm-/go-vdm-=/}
 
 CATEGORIES =		lang
 
 HOMEPAGE =		https://golang.org/
 
-MAINTAINER =		Joel Sing <jsing@openbsd.org>
+MAINTAINER =		Alexander van der Meij <openbsd-ports@vandermeij.tech>
 
 # software: BSD, documentation: CC-BY-3.0
 PERMIT_PACKAGE =	Yes

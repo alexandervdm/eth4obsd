@@ -18,15 +18,9 @@ PERMIT_PACKAGE =    Yes
 
 SUBST_VARS =	    VARBASE
 
-BUILD_DEPENDS =     lang/go155 \
+BUILD_DEPENDS =     lang/go-vdm \
 		    security/bls-eth-go
 
-# NOTE: have to use non-system lang/go for now so will
-# have to look into all this fancy stuff later
-#MAKE_ENV +=	    CGO_CFLAGS=-I${PREFIX}/include \
-#		    CGO_LDFLAGS=-L${PREFIX}/lib
-#MODULES =	    lang/go
-#MODGO_TYPE =	    bin
 
 PRYSM_CGO=CGO_LDFLAGS=-L${PREFIX}/lib CGO_CFLAGS="-D__BLST_PORTABLE__"
 PRYSM_TAGS=blst_enabled
