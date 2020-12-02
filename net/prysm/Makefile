@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile
 
 COMMENT =	    Go implementation of the Ethereum 2.0 blockchain
-VERSION =	    1.0.2
+VERSION =	    1.0.3
 PKGNAME =	    prysm-$(VERSION)
 #REVISION =	    1
 
@@ -20,7 +20,6 @@ SUBST_VARS =	    VARBASE
 
 BUILD_DEPENDS =     lang/go-vdm \
 		    security/bls-eth-go
-
 
 PRYSM_CGO=CGO_LDFLAGS=-L${PREFIX}/lib CGO_CFLAGS="-D__BLST_PORTABLE__"
 PRYSM_TAGS=blst_enabled
