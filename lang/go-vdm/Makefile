@@ -8,7 +8,7 @@ BIN_BOOTSTRAP_VERSION = 1.13.9
 
 COMMENT =		Go programming language
 
-VERSION =		1.15.5
+VERSION =		1.15.6
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-vdm-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-vdm-/go-vdm-=/}
@@ -25,7 +25,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c pthread
 
 MASTER_SITES =		https://golang.org/dl/
-MASTER_SITES0 =		https://download.exigere.com.au/pub/go/
+MASTER_SITES0 =		https://ftp.openbsd.org/pub/OpenBSD/distfiles/
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 
