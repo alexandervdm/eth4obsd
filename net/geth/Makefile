@@ -2,9 +2,9 @@
 # NOTE: based on port by Fabian Raetz at github.com/jasperla/openbsd-wip
 
 COMMENT =	    go implementation of the ethereum protocol
-VERSION =	    1.9.24
+VERSION =	    1.9.25
 PKGNAME =	    geth-$(VERSION)
-REVISION =	    1
+#REVISION =	    0
 
 GH_ACCOUNT =	    ethereum
 GH_PROJECT =	    go-ethereum
@@ -38,7 +38,7 @@ do-install:
 	done
 
 regen-conf:
-	${WRKSRC}/build/bin/geth dumpconfig > ${FILESDIR}/geth.conf
+	${WRKSRC}/build/bin/geth --nousb dumpconfig > ${FILESDIR}/geth.conf
 	sed -i -e '/^DataDir\ /  s/=.*/=\ "$${VARBASE}\/geth\/data"/' \
 		-e '/^DatasetDir\ /s/=.*/=\ \"$${VARBASE}\/geth\/ethash"/' \
 		${FILESDIR}/geth.conf
