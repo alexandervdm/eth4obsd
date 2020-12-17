@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v$
+@static-lib lib/libbls384_256.a

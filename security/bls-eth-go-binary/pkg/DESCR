@@ -1,0 +1,3 @@
+The bls library is an implementation of the BLS threshold signature as defined
+in the Ethereum 2.0 phase zero spec.
+
