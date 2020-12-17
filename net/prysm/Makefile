@@ -19,7 +19,7 @@ PERMIT_PACKAGE =    Yes
 SUBST_VARS =	    VARBASE
 
 BUILD_DEPENDS =     lang/go-vdm \
-		    security/bls-eth-go
+		    security/bls-eth-go-binary
 
 PRYSM_CGO=CGO_LDFLAGS=-L${PREFIX}/lib CGO_CFLAGS="-D__BLST_PORTABLE__"
 PRYSM_TAGS=blst_enabled
