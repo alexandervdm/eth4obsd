@@ -44,5 +44,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/prysm/
 	${INSTALL_DATA} ${FILESDIR}/*.yaml ${PREFIX}/share/examples/prysm/
 
+do-test:
+	cd ${WRKSRC} && \
+		${PRYSM_CGO} go test -v -tags ${PRYSM_TAGS} ./validator/...
 
 .include <bsd.port.mk>
