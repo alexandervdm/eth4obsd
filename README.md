@@ -10,7 +10,7 @@ It is recommended to follow the instructions in the provided README documents.
 | :---         |     :---      |          ---: |
 | Geth    | 0.9.25            | ALL OK    |
 | Prysm   | 1.0.5      | WORKING WITH PATCHES    |
-| Lighthouse    | 1.0.2       | WORKING WITH PATCHES    |
+| Lighthouse    | 1.0.4       | WORKING WITH PATCHES    |
 | Nimbus        | N/A         | TBD |
 | Teku          | N/A         | N/A    |
 
@@ -59,9 +59,8 @@ Here follows an overview of the patching that were necessary to make the package
 - A set of patches was added to the Prysm build contraints for the new blst dependency.
 
 #### [Sigp/Lighthouse](https://github.com/sigp/lighthouse)
-- Dependency openssl-sys-0.5.8 was forked to include a [patch](https://github.com/alexandervdm/rust-openssl) to support LibreSSL 3.2.2
 - Build flag OPENSSL_NO_VENDOR was added to make use of the system libressl
-- RUSTFLAGS="-C default_linker_libraries" was added to prevent fatal linkage issues when compiling the lighthouse binary
+- RUSTFLAGS="-C default_linker_libraries" was added to prevent linkage issues when compiling the lighthouse binary
 - The slashing protection Makefile was patched to rename the GNU/tar calls to gtar
 
 ## Troubleshooting

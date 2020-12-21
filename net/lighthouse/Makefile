@@ -1,7 +1,7 @@
 # $OpenBSD: Makefile
 
 COMMENT =	    Ethereum 2.0 Rust based client maintained by Sigma Prime.
-VERSION =	    1.0.3
+VERSION =	    1.0.4
 #REVISION =	    0
 
 GH_ACCOUNT =	    sigp
@@ -36,5 +36,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/target/release/lighthouse ${PREFIX}/bin/
+
 
 .include <bsd.port.mk>
