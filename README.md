@@ -10,7 +10,7 @@ It is recommended to follow the instructions in the provided README documents.
 | :---         |     :---      |          ---: |
 | Geth    | 0.9.25            | ALL OK    |
 | Prysm   | 1.0.5      | WORKING WITH PATCHES    |
-| Lighthouse    | 1.0.4       | WORKING WITH PATCHES    |
+| Lighthouse    | 1.0.5       | WORKING WITH PATCHES    |
 | Nimbus        | N/A         | TBD |
 | Teku          | N/A         | N/A    |
 
